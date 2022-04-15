@@ -1,11 +1,49 @@
 .container {
   padding: 0 2rem;
-}
-
-.main {
   min-height: 100vh;
-  padding: 4rem 4rem;
   background: url(/assets/home/background-home-desktop.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  display: grid;
+  align-items: flex-end;
+}
+
+.main {
+  padding: 7rem 4rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-content: center;
+  justify-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.callToActionSection {
+  grid-column: span 5;
+  h1 {
+    margin-top: 15px;
+    margin-bottom: 25px;
+  }
+
+  p {
+    max-width: 480px;
+  }
+}
+
+.buttonSection {
+  grid-column: 10 / span 2;
+  display: grid;
+  align-items: center;
+
+  button {
+    height: 250px;
+    width: 250px;
+    border-radius: 1000px;
+    border: none;
+    font-size: 32px;
+    font-family: "Bellefair";
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+    font-weight: 400;
+  }
 }
