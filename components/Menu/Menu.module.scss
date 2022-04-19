@@ -1,0 +1,63 @@
+.navigation {
+    position: fixed;
+    width: 1110px;
+    padding: 0 32px;
+    // CENTERS THE ABSOLUTLEY POSITIONED ELEMENT
+    right: 50%;
+    transform: translateX(50%);
+    // 
+    height: 96px;
+    margin-top: 40px;
+
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+}
+
+.navigation .menu {
+    list-style: none;
+    height: 96px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+// ** Background Blur for Nav ** //
+.blur {
+    position: absolute;
+    background-color: #97979715;
+    backdrop-filter: blur(15px);
+    left: -123px;
+    width: 2000px;
+    height: 96px;
+    z-index: -1;
+}
+
+.blur::before {
+    content: "";
+    height: 2px;
+    width: 500px;
+    background-color: rgb(65, 65, 65);
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%);
+    left: 0;
+}
+
+/********************************************************************************
+// MENU TYPOGRAPHY //
+*********************************************************************************/
+
+.menuText {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    span {
+        font-weight: 600;
+    }
+}
