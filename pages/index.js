@@ -5,9 +5,9 @@ import styles from "../styles/Home.module.scss";
 export default function Home() {
   return (
     <div className={styles.container}>
-      <div className={styles.main}>
+      <div className={styles.mainGrid}>
         <section className={styles.callToActionSection}>
-          <h5>So, You want to travel to space</h5>
+          <h5>So, You want to travel to</h5>
           <h1>Space</h1>
           <p>
             Let’s face it; if you want to go to space, you might as well
