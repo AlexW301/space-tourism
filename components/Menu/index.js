@@ -1,18 +1,22 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from "./Menu.module.scss";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Menu = () => {
+  const router = useRouter();
+  console.log(router.pathname)
+
   return (
     <nav className={styles.navigation}>
       <Link href="/" passHref>
-        <a>
+        <a className={styles.logo}>
           <img src="/assets/shared/logo.svg" alt="logo" />
         </a>
       </Link>
       <ul className={styles.menu}>
         <div className={styles.blur}></div>
-        <li>
+        <li style={router.pathname === '/' ? {borderBottom: '3px solid #ffffff'} : null}>
           <Link href="/" passHref>
             <a className={styles.menuText}>
               <span>00</span> Home
