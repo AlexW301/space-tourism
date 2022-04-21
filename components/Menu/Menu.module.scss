@@ -3,39 +3,40 @@
 *********************************************************************************/
 
 .navigation {
-    position: fixed;
-    width: 1110px;
-    padding: 0 32px;
-    // CENTERS THE ABSOLUTLEY POSITIONED ELEMENT
-    right: 50%;
-    transform: translateX(50%);
-    // 
-    height: 96px;
-    margin-top: 40px;
+  position: fixed;
+  width: 1110px;
+  padding: 0 32px;
+  
+  // CENTERS THE ABSOLUTLEY POSITIONED ELEMENT
+  right: 50%;
+  transform: translateX(50%);
 
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr 1fr;
+  height: 96px;
+  margin-top: 40px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
 
-    @media screen and (max-width: 1233px) {
-        margin-top: 0;
-        right: 0;
-        transform: translateX(0%);
-        width: auto;
-    }
+  @media screen and (max-width: 1233px) {
+    margin-top: 0;
+    right: 0;
+    transform: translateX(0%);
+    width: 100%;
+    padding: 0 50px;
+  }
 }
 
 .navigation .menu {
-    list-style: none;
-    height: 96px;
-    margin: 0;
-    padding: 0;
-    position: relative;
+  list-style: none;
+  height: 96px;
+  margin: 0;
+  padding: 0;
+  position: relative;
 
-    grid-column: 2;
-    display: flex;
-    align-items: center;
-    gap: 50px;
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  gap: 50px;
 }
 
 /********************************************************************************
@@ -43,14 +44,21 @@
 *********************************************************************************/
 
 .logo {
-    position: absolute;
-    width: fit-content;
-    left: -60px;
+  position: absolute;
+  width: fit-content;
+  left: -60px;
 
-    @media screen and (max-width: 1233px) {
-        position: relative;
-        left: 0;
-    }
+  @media screen and (max-width: 1233px) {
+    position: relative;
+    left: 0;
+  }
+}
+
+.logo img {
+  @media screen and (max-width: 655px) {
+    height: 40px;
+    width: 40px;
+  }
 }
 
 /********************************************************************************
@@ -58,33 +66,33 @@
 *********************************************************************************/
 
 .blur {
-    position: absolute;
-    background-color: #97979715;
-    backdrop-filter: blur(15px);
-    left: -123px;
-    width: 2000px;
-    height: 96px;
-    z-index: -1;
+  position: absolute;
+  background-color: #97979715;
+  backdrop-filter: blur(15px);
+  left: -123px;
+  width: 2000px;
+  height: 96px;
+  z-index: -1;
 
-    @media screen and (max-width: 1233px) {
-        left: -50px;
-        width: 1000px;
-    }
+  @media screen and (max-width: 1233px) {
+    left: -50px;
+    width: 1000px;
+  }
 }
 
 .blur::before {
-    content: "";
-    height: 2px;
-    width: 446px;
-    background-color: rgba(65, 65, 65, 0.658);
-    position: absolute;
-    top: 50%;
-    transform: translate(-90%,50%);
-    left: 0;
+  content: "";
+  height: 2px;
+  width: 446px;
+  background-color: rgba(65, 65, 65, 0.658);
+  position: absolute;
+  top: 50%;
+  transform: translate(-90%, 50%);
+  left: 0;
 
-    @media screen and (max-width: 1233px) {
-        display: none;
-    }
+  @media screen and (max-width: 1233px) {
+    display: none;
+  }
 }
 
 /********************************************************************************
@@ -92,16 +100,20 @@
 *********************************************************************************/
 
 .menuText {
-    letter-spacing: 2px;
-    text-transform: uppercase;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 
-    span {
-        font-weight: 600;
+  span {
+    font-weight: 600;
 
-        @media screen and (max-width: 1233px) {
-            display: none;
-        }
+    @media screen and (max-width: 1233px) {
+      display: none;
     }
+
+    @media screen and (max-width: 655px) {
+      display: inline;
+    }
+  }
 }
 
 /********************************************************************************
@@ -109,14 +121,117 @@
 *********************************************************************************/
 
 .menu li {
-    height: 100%;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 3px solid transparent;
-    transition: all .2s ease-in;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease-in;
+
+  @media screen and (max-width: 655px) {
+    height: 31px;
+    width: 100%;
+    justify-content: start;
+    padding-left: 34px;
+    border-bottom: none;
+    border-right: 3px solid transparent;
+  }
 }
 
 .menu li:hover {
-    border-bottom: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
+  @media screen and (max-width: 655px) {
+    border-bottom: none;
+    border-right: 4px solid #ffffff;
+  }
+}
+
+.menu .menuFocus {
+  border-bottom: 3px solid #ffffff;
+
+  @media screen and (max-width: 655px) {
+    border-bottom: none;
+    border-right: 4px solid #ffffff;
+  }
+}
+
+/********************************************************************************
+********************************************************************************
+// MOBILE MENU STYLES //
+********************************************************************************
+*********************************************************************************/
+
+/********************************************************************************
+// GENERAL / CONTAINERS //
+*********************************************************************************/
+
+.navigation {
+  @media screen and (max-width: 655px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+  }
+}
+
+.navigation .menu {
+  @media screen and (max-width: 655px) {
+    position: absolute;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    // Change right to 0 to show menu
+    right: -100vw;
+    background-color: #97979715;
+    backdrop-filter: blur(15px);
+    width: 75vw;
+    padding-top: 120px;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.show {
+  right: 0 !important;
+}
+
+/********************************************************************************
+// BLUR EFFECT //
+*********************************************************************************/
+
+.blur {
+  @media screen and (max-width: 655px) {
+    display: none;
+  }
+}
+
+.blur::before {
+  content: "";
+  height: 2px;
+  width: 446px;
+  background-color: rgba(65, 65, 65, 0.658);
+  position: absolute;
+  top: 50%;
+  transform: translate(-90%, 50%);
+  left: 0;
+
+  @media screen and (max-width: 1233px) {
+    display: none;
+  }
+}
+
+/********************************************************************************
+// MENU BUTTON //
+*********************************************************************************/
+
+.menuBtn {
+  display: none;
+  z-index: 1;
+
+  @media screen and (max-width: 655px) {
+    display: block;
+    background: transparent;
+    width: fit-content;
+    border: none;
+  }
 }

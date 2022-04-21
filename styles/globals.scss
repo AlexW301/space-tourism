@@ -32,7 +32,7 @@ h1 {
   font-weight: 400;
   margin: 0;
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 655px) {
     font-size: 80px;
   }
 }
@@ -45,7 +45,7 @@ h5 {
   font-weight: 400;
   margin: 0;
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 655px) {
     font-size: 16px;
   }
 }
@@ -57,7 +57,7 @@ p {
   line-height: 2;
   margin: 0;
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 655px) {
     font-size: 15px;
     line-height: 1.8;
   }

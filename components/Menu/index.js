@@ -2,10 +2,18 @@
 import styles from "./Menu.module.scss";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useRef, useState } from "react";
 
 const Menu = () => {
   const router = useRouter();
-  console.log(router.pathname)
+  const menu = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const showMenu = () => {
+    console.log(menu.current.classList)
+    menu.current.classList.toggle(styles.show)
+    setIsOpen(!isOpen);
+  }
 
   return (
     <nav className={styles.navigation}>
@@ -14,9 +22,10 @@ const Menu = () => {
           <img src="/assets/shared/logo.svg" alt="logo" />
         </a>
       </Link>
-      <ul className={styles.menu}>
+      <button onClick={showMenu} className={styles.menuBtn}><img src={isOpen ? "/assets/shared/icon-close.svg" : "/assets/shared/icon-hamburger.svg"} alt="menu icon"/></button>
+      <ul ref={menu} className={styles.menu}>
         <div className={styles.blur}></div>
-        <li style={router.pathname === '/' ? {borderBottom: '3px solid #ffffff'} : null}>
+        <li className={router.pathname === '/' ? styles.menuFocus : null}>
           <Link href="/" passHref>
             <a className={styles.menuText}>
               <span>00</span> Home

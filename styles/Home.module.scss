@@ -11,16 +11,17 @@
   display: grid;
   align-items: flex-end;
 
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1233px) {
     background: url(/assets/home/background-home-tablet.jpg);
     background-size: cover;
     background-repeat: no-repeat;
   }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 655px) {
     background: url(/assets/home/background-home-mobile.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    align-items: flex-start;
   }
 }
 
@@ -49,9 +50,10 @@
       margin-top: 206px;
   }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 655px) {
       gap: 81px;
       padding: 0 0rem 7% 0rem;
+      margin-top: 126px;
   }
 }
 
@@ -98,7 +100,7 @@
     letter-spacing: 2.4px;
     font-weight: 400;
 
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 655px) {
       height: 150px;
       width: 150px;
       font-size: 20px;
