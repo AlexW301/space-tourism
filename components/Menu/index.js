@@ -32,8 +32,8 @@ const Menu = () => {
             </a>
           </Link>
         </li>
-        <li>
-          <Link href="/" passHref>
+        <li className={router.pathname === '/destination' ? styles.menuFocus : null}>
+          <Link href="/destination" passHref>
             <a className={styles.menuText}>
               <span>01</span> Destination
             </a>
