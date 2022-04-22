@@ -55,6 +55,17 @@
       justify-content: center;
     }
   }
+
+  @media screen and (max-width: 655px) {
+      justify-content: center;
+      text-align: center;
+      row-gap: 30px;
+      margin-top: 106px;
+    .planetImg {
+        height: 200px;
+        width: 200px;
+    }
+}
 }
 
 /********************************************************************************
@@ -128,15 +139,40 @@
   }
 
   @media screen and (max-width: 1233px) {
-      justify-items: center;
-      text-align: center;
-      margin-bottom: 62px;
-      max-width: 573px;
-      margin: 0 auto 62px auto;
+    justify-items: center;
+    text-align: center;
+    margin-bottom: 62px;
+    max-width: 573px;
+    margin: 0 auto 62px auto;
 
-      .divider {
-          width: 100%;
-      }
+    .divider {
+      width: 100%;
+    }
+
+    .name {
+      font-size: 80px;
+    }
+  }
+
+  @media screen and (max-width: 655px) {
+    max-width: 327px;
+    grid-template-areas:
+    "tabs"
+    "name"
+    "desc"
+    "div"
+    "distance"
+    "time";
+    .name {
+      font-size: 56px;
+    }
+    .distance {
+        margin-bottom: 25px;
+        font-size: 28px;
+    }
+    .time {
+        font-size: 28px;
+    }
   }
 }
 
@@ -146,9 +182,15 @@
 
 .subTitle {
   grid-area: subTitle;
+  width: fit-content;
+  margin: 0 auto;
   span {
     font-weight: 600;
     color: #979797;
+  }
+
+  @media screen and (max-width: 655px) {
+      
   }
 }
 
