@@ -37,17 +37,48 @@ h1 {
   }
 }
 
-h5 {
+h2 {
+  font-family: "Bellefair";
+  font-size: 100px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 0;
+
+}
+
+h4 {
   font-family: "Barlow Condensed";
   font-size: 28px;
   letter-spacing: 4.75px;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: lighter;
   margin: 0;
 
   @media screen and (max-width: 655px) {
     font-size: 16px;
   }
+}
+
+h5 {
+  font-family: "Bellefair";
+  font-size: 28px;
+  letter-spacing: 4.75px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  margin: 0;
+
+  @media screen and (max-width: 655px) {
+    font-size: 16px;
+  }
+}
+
+h6 {
+  font-family: "Barlow Condensed";
+  font-size: 16px;
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 0;
 }
 
 p {

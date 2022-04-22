@@ -1,8 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <div className={styles.container}>
       <div className={styles.mainGrid}>
@@ -17,7 +20,7 @@ export default function Home() {
           </p>
         </section>
         <section className={styles.buttonSection}>
-          <button>explore</button>
+          <button onClick={() => router.push("/destination")}>explore</button>
         </section>
       </div>
     </div>

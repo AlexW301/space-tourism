@@ -3,47 +3,58 @@
 *********************************************************************************/
 
 .container {
-    padding: 0 2rem;
-    min-height: 100vh;
-    background: url(/assets/destination/background-destination-desktop.jpg);
-    background-repeat: no-repeat;
+  padding: 0 2rem;
+  min-height: 100vh;
+  background: url(/assets/destination/background-destination-desktop.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  align-items: flex-start;
+
+  @media screen and (max-width: 1233px) {
+    background: url(/assets/destination/background-destination-tablet.jpg);
     background-size: cover;
-    display: grid;
-    align-items: flex-start;
-  
-    @media screen and (max-width: 1233px) {
-      background: url(/assets/destination/background-destination-tablet.jpg);
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-  
-    @media screen and (max-width: 655px) {
-      background: url(/assets/destination/background-destination-mobile.jpg);
-      background-size: cover;
-      background-repeat: no-repeat;
-      align-items: flex-start;
-    }
+    background-repeat: no-repeat;
+    padding: 0 50px;
   }
+
+  @media screen and (max-width: 655px) {
+    background: url(/assets/destination/background-destination-mobile.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: flex-start;
+  }
+}
 
 /********************************************************************************
 // MAIN GRID //
 *********************************************************************************/
 
 .mainGrid {
-    width: 1110px;
-    margin: 0 auto;
-    margin-top: 166px;
-    display: grid;
-    align-items: center;
-    row-gap: 70px;
-    column-gap: 156px;
-    grid-template-areas: 
-    'subTitle subTitle'
-    'image content';
+  width: 1110px;
+  margin: 0 auto;
+  margin-top: 166px;
+  display: grid;
+  align-items: center;
+  row-gap: 70px;
+  column-gap: 156px;
+  grid-template-areas:
+    "subTitle subTitle"
+    "image content";
 
-    @media screen and (max-width: 1194px) {
-        width: 100%;
-      }
+  @media screen and (max-width: 1233px) {
+    width: 100%;
+    grid-template-areas:
+      "subTitle"
+      "image"
+      "content";
+    .imageContainer {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
 
 /********************************************************************************
@@ -51,59 +62,94 @@
 *********************************************************************************/
 
 .content {
-    display: grid;
-    grid-template-areas: 
-    'tabs tabs'
-    'name name'
-    'desc desc'
-    'div div'
-    'distance time';
+  display: grid;
+  grid-template-areas:
+    "tabs tabs"
+    "name name"
+    "desc desc"
+    "div div"
+    "distance time";
 
-    .tabNav {
-        grid-area: tabs;
+  .tabNav {
+    grid-area: tabs;
+
+    ul li button {
+      color: #ffffff;
+      background-color: transparent;
+      width: fit-content;
+      border: none;
+      padding: 0 0 14px 0;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
     }
 
-    .name {
-        grid-area: name;
-        font-size: 100px;
-        margin: 30px 0;
+    ul li button:hover {
+      border-bottom: 2px solid #ffffff7a;
     }
 
-    .description {
-        grid-area: desc;
-        margin-bottom: 55px;
+    .activeTab {
+      border-bottom: 2px solid #ffffff;
     }
+  }
 
-    .divider {
-        grid-area: div;
-        height: 1px;
-        background-color: #97979763;
-        margin-bottom: 20px;
+  .name {
+    grid-area: name;
+    margin: 30px 0;
+  }
+
+  .description {
+    grid-area: desc;
+    margin-bottom: 55px;
+  }
+
+  .divider {
+    grid-area: div;
+    height: 1px;
+    background-color: #97979763;
+    margin-bottom: 20px;
+  }
+
+  .distance {
+    grid-area: distance;
+  }
+
+  h5 {
+    line-height: 35px;
+    letter-spacing: 1.3px;
+    span {
+      font-size: 14px;
+      font-family: "Barlow Condensed";
+      letter-spacing: 4.75px;
+      text-transform: uppercase;
+      font-weight: lighter;
+      margin: 0;
     }
+  }
 
-    .distance {
-        grid-area: distance;
+  @media screen and (max-width: 1233px) {
+      justify-items: center;
+      text-align: center;
+      margin-bottom: 62px;
+      max-width: 573px;
+      margin: 0 auto 62px auto;
 
-    }
-
-    h5 {
-        span {
-            font-size: 14px;
-        }
-    }
+      .divider {
+          width: 100%;
+      }
+  }
 }
-
 
 /********************************************************************************
 // SUB TITLE //
 *********************************************************************************/
 
 .subTitle {
-    grid-area: subTitle;
-    span {
-        font-weight: 600;
-        color: #979797;
-    }
+  grid-area: subTitle;
+  span {
+    font-weight: 600;
+    color: #979797;
+  }
 }
 
 /********************************************************************************
@@ -111,7 +157,7 @@
 *********************************************************************************/
 
 .planetImg {
-    grid-area: image;
+  grid-area: image;
 }
 
 /********************************************************************************
@@ -119,7 +165,7 @@
 *********************************************************************************/
 
 .content {
-    grid-area: content;
+  grid-area: content;
 }
 
 /********************************************************************************
@@ -127,7 +173,8 @@
 *********************************************************************************/
 
 .tabNav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 33px;
 }
