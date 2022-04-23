@@ -1,11 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from "../styles/Destination.module.scss";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { gsap } from "gsap";
 
 const Destination = () => {
+  // VARIABLES
   let planetData = [];
   const [tab, setTab] = useState(0);
+  let mainGrid = useRef(null);
 
   planetData = [
     {
@@ -42,9 +45,19 @@ const Destination = () => {
     },
   ];
 
+  // FUNCTIONS
+
+  const newTab = (tab) => {
+    setTab(tab);
+    const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
+    tl.to(mainGrid.current, { opacity: 0 })
+    tl.to(mainGrid.current, { opacity: 1 }, "+=.3")
+  }
+
+  // COMPONENT
   return (
     <div className={styles.container}>
-      <div className={styles.mainGrid}>
+      <div ref={mainGrid} className={styles.mainGrid}>
         <h4 className={styles.subTitle}>
           <span>01</span> Pick Your Destination
         </h4>
@@ -58,22 +71,22 @@ const Destination = () => {
         <section className={styles.content}>
           <nav className={styles.tabNav}>
             <ul>
-              <li onClick={() => setTab(0)}>
+              <li onClick={() => newTab(0)}>
                 <button className={tab === 0 ? styles.activeTab : null}>
                   <h6>Moon</h6>
                 </button>
               </li>
-              <li onClick={() => setTab(1)}>
+              <li onClick={() => newTab(1)}>
                 <button className={tab === 1 ? styles.activeTab : null}>
                   <h6>Mars</h6>
                 </button>
               </li>
-              <li onClick={() => setTab(2)}>
+              <li onClick={() => newTab(2)}>
                 <button className={tab === 2 ? styles.activeTab : null}>
                   <h6>Europa</h6>
                 </button>
               </li>
-              <li onClick={() => setTab(3)}>
+              <li onClick={() => newTab(3)}>
                 <button className={tab === 3 ? styles.activeTab : null}>
                   <h6>Titan</h6>
                 </button>
