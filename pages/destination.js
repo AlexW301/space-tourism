@@ -4,12 +4,26 @@ import Link from "next/link";
 import { useState, useRef } from "react";
 import { gsap } from "gsap";
 
+
 const Destination = () => {
   // VARIABLES
   let planetData = [];
   const [tab, setTab] = useState(0);
   let mainGrid = useRef(null);
+  let picture = useRef(null);
+  let name = useRef(null);
+  let desc = useRef(null);
+  let distance = useRef(null);
+  let time = useRef(null);
 
+  const content = [
+    name.current,
+    desc.current,
+    distance.current,
+    time.current,
+    picture.current
+  ]
+  
   planetData = [
     {
       name: "Moon",
@@ -47,11 +61,12 @@ const Destination = () => {
 
   // FUNCTIONS
 
-  const newTab = (tab) => {
+  const newTab = async (tab) => {
+    const tl = gsap.timeline({ defaults: { ease: "power1.out", duration: .3 } });
+    console.log(gsap)
+    await tl.to(content, { opacity: 0 }, 0);
     setTab(tab);
-    const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
-    tl.to(mainGrid.current, { opacity: 0 })
-    tl.to(mainGrid.current, { opacity: 1 }, "+=.3")
+    tl.to(content, { opacity: 1 }, "+=0");
   }
 
   // COMPONENT
@@ -61,7 +76,7 @@ const Destination = () => {
         <h4 className={styles.subTitle}>
           <span>01</span> Pick Your Destination
         </h4>
-        <div className={styles.imageContainer}>
+        <div ref={picture} className={styles.imageContainer}>
         <img
           className={styles.planetImg}
           src={planetData[tab].image}
@@ -93,15 +108,15 @@ const Destination = () => {
               </li>
             </ul>
           </nav>
-          <h2 className={styles.name}>{planetData[tab].name}</h2>
-          <p className={styles.description}>{planetData[tab].description}</p>
+          <h2 ref={name} className={styles.name}>{planetData[tab].name}</h2>
+          <p ref={desc} className={styles.description}>{planetData[tab].description}</p>
           <div className={styles.divider}></div>
-          <h5 className={styles.distance}>
+          <h5 ref={distance} className={styles.distance}>
             <span>Avg. Distance</span>
             <br></br>
             {planetData[tab].distance}
           </h5>
-          <h5 className={styles.time}>
+          <h5 ref={time} className={styles.time}>
             <span>Est. Travel Time</span>
             <br></br>
             {planetData[tab].time}

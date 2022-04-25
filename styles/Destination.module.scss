@@ -33,11 +33,9 @@
 .mainGrid {
   opacity: 1;
   transition: all 1 ease-in-out;
-
   width: 1110px;
   margin: 0 auto;
   display: grid;
-  align-items: center;
   row-gap: 70px;
   column-gap: 156px;
   grid-template-areas:
@@ -189,8 +187,6 @@
 
 .subTitle {
   grid-area: subTitle;
-  width: fit-content;
-  margin: 0 auto;
   span {
     font-weight: 600;
     color: #979797;

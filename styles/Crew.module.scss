@@ -1,0 +1,27 @@
+/********************************************************************************
+// CONTAINER //
+*********************************************************************************/
+
+.container {
+    padding: 0 2rem;
+    min-height: 100vh;
+    background: url(/assets/crew/background-crew-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    align-items: center;
+  
+    @media screen and (max-width: 1233px) {
+      background: url(/assets/crew/background-crew-tablet.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: 0 50px;
+    }
+  
+    @media screen and (max-width: 655px) {
+      background: url(/assets/crew/background-crew-mobile.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      align-items: flex-start;
+    }
+  }
