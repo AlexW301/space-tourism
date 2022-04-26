@@ -1,9 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from "../styles/Destination.module.scss";
 import Link from "next/link";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
-
 
 const Destination = () => {
   // VARIABLES
@@ -16,14 +15,6 @@ const Destination = () => {
   let distance = useRef(null);
   let time = useRef(null);
 
-  const content = [
-    name.current,
-    desc.current,
-    distance.current,
-    time.current,
-    picture.current
-  ]
-  
   planetData = [
     {
       name: "Moon",
@@ -36,7 +27,7 @@ const Destination = () => {
     {
       name: "Mars",
       description:
-        "Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!",
+        "Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!                                          ",
       distance: "225 MIL. km",
       time: "9 months",
       image: "/assets/destination/image-mars.png",
@@ -62,12 +53,18 @@ const Destination = () => {
   // FUNCTIONS
 
   const newTab = async (tab) => {
-    const tl = gsap.timeline({ defaults: { ease: "power1.out", duration: .3 } });
-    console.log(gsap)
+    const content = [
+      name.current,
+      desc.current,
+      distance.current,
+      time.current,
+      picture.current,
+    ];
+    const tl = gsap.timeline({ defaults: { duration: 0.3 } });
     await tl.to(content, { opacity: 0 }, 0);
     setTab(tab);
     tl.to(content, { opacity: 1 }, "+=0");
-  }
+  };
 
   // COMPONENT
   return (
@@ -77,11 +74,11 @@ const Destination = () => {
           <span>01</span> Pick Your Destination
         </h4>
         <div ref={picture} className={styles.imageContainer}>
-        <img
-          className={styles.planetImg}
-          src={planetData[tab].image}
-          alt="image of destination"
-        />
+          <img
+            className={styles.planetImg}
+            src={planetData[tab].image}
+            alt="image of destination"
+          />
         </div>
         <section className={styles.content}>
           <nav className={styles.tabNav}>
@@ -108,8 +105,12 @@ const Destination = () => {
               </li>
             </ul>
           </nav>
-          <h2 ref={name} className={styles.name}>{planetData[tab].name}</h2>
-          <p ref={desc} className={styles.description}>{planetData[tab].description}</p>
+          <h2 ref={name} className={styles.name}>
+            {planetData[tab].name}
+          </h2>
+          <p ref={desc} className={styles.description}>
+            {planetData[tab].description}
+          </p>
           <div className={styles.divider}></div>
           <h5 ref={distance} className={styles.distance}>
             <span>Avg. Distance</span>
