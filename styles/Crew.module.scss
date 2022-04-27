@@ -16,6 +16,7 @@
       background-size: cover;
       background-repeat: no-repeat;
       padding: 0 50px;
+      align-items: flex-start;
     }
   
     @media screen and (max-width: 655px) {
@@ -69,15 +70,105 @@
 
   .tabs {
     grid-area: tabs;
+    z-index: 1;
   }
 
   @media screen and (max-width: 1233px) {
-    width: 100%;
+    width: fit-content;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    row-gap: 40px;
+    margin-top: 156px;
+
+    .subTitle {
+      position: absolute;
+      left: 50px;
+      top: 136px;
+      font-size: 20px;
+    }
+
+    .content {
+      width: 458px;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      justify-items: center;
+
+      .title {
+        font-size: 24px;
+      }
+  
+      .name {
+        font-size: 40px;
+      }
+
+      p {
+        width: 456px;
+      }
+    }
+
+    .pictureContainer {
+      position: absolute;
+      bottom: 0;
+      right: 50%;
+      transform: translateX(50%);
+      z-index: 0;
+    }
 
   }
 
   @media screen and (max-width: 655px) {
+    grid-template-areas: 
+    "subTitle"
+    "picture"
+    "tabs"
+    "content";
+    margin-top: 116px;
 
+    .subTitle {
+      position: relative;
+      left: unset;
+      top: unset;
+      grid-area: subTitle;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .pictureContainer {
+      position: relative;
+      grid-area: picture;
+      right: unset;
+      transform: unset;
+      bottom: unset;
+      height: 300px;
+    }
+
+    .pictureContainer::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 50%;
+      transform: translateX(50%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.137);
+      width: 90vw;
+    }
+
+    .content {
+      width: fit-content;
+
+      .title {
+        font-size: 16px;
+      }
+  
+      .name {
+        font-size: 24px;
+      }
+
+      p {
+        width: 100%;
+      }
+    }
 }
 }
 
