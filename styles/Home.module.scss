@@ -9,7 +9,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   display: grid;
-  align-items: flex-start;
+  align-items: center;
 
   @media screen and (max-width: 1233px) {
     background: url(/assets/home/background-home-tablet.jpg);
@@ -30,13 +30,13 @@
 *********************************************************************************/
 
 .mainGrid {
-  padding: 0 2rem 7% 2rem;
+  padding: 70px 2rem 0;
   display: grid;
   grid-template-areas: "text button";
   grid-auto-rows: minmax(100px, auto);
   width: 1110px;
   margin: 0 auto;
-  margin-top: 346px;
+  // margin-top: 346px;
 
   @media screen and (max-width: 1194px) {
     width: 100%;
