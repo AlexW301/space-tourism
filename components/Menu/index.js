@@ -10,9 +10,16 @@ const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const showMenu = () => {
-    console.log(menu.current.classList)
     menu.current.classList.toggle(styles.show)
     setIsOpen(!isOpen);
+  }
+
+  const newPage = (path) => {
+    router.push(path)
+    if(isOpen) {
+      setIsOpen(false)
+      menu.current.classList.toggle(styles.show)
+    }
   }
 
   return (
@@ -26,32 +33,24 @@ const Menu = () => {
       <ul ref={menu} className={styles.menu}>
         <div className={styles.blur}></div>
         <li className={router.pathname === '/' ? styles.menuFocus : null}>
-          <Link href="/" passHref>
-            <a className={styles.menuText}>
+          <button className={styles.menuText} onClick={() => newPage('/')}>
               <span>00</span> Home
-            </a>
-          </Link>
+          </button>
         </li>
         <li className={router.pathname === '/destination' ? styles.menuFocus : null}>
-          <Link href="/destination" passHref>
-            <a className={styles.menuText}>
+          <button className={styles.menuText} onClick={() => newPage('/destination')}>
               <span>01</span> Destination
-            </a>
-          </Link>
+          </button>
         </li>
         <li className={router.pathname === '/crew' ? styles.menuFocus : null}>
-          <Link href="/crew" passHref>
-            <a className={styles.menuText}>
+          <button className={styles.menuText} onClick={() => newPage('/crew')}>
               <span>02</span> Crew
-            </a>
-          </Link>
+          </button>
         </li>
         <li className={router.pathname === '/technology' ? styles.menuFocus : null}>
-          <Link href="/technology" passHref>
-            <a className={styles.menuText}>
+          <button className={styles.menuText} onClick={() => newPage('/technology')}>
               <span>03</span> Technology
-            </a>
-          </Link>
+          </button>
         </li>
       </ul>
     </nav>

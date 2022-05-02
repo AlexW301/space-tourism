@@ -9,7 +9,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     display: grid;
-    align-items: center;
+    align-items: flex-start;
   
     @media screen and (max-width: 1233px) {
       background: url(/assets/crew/background-crew-tablet.jpg);
@@ -36,10 +36,12 @@
   transition: all 1 ease-in-out;
   width: 1110px;
   margin: 0 auto;
-  margin-top: 106px;
+  padding-top: 220px;
+  padding-bottom: 30px;
   display: grid;
-  row-gap: 70px;
+  row-gap: 80px;
   column-gap: 156px;
+  min-height: 100vh;
   grid-template-areas:
     "subTitle"
     "content"
@@ -79,7 +81,8 @@
     justify-items: center;
     text-align: center;
     row-gap: 40px;
-    margin-top: 156px;
+    min-height: unset;
+    padding-top: 175px;
 
     .subTitle {
       position: absolute;
@@ -124,7 +127,7 @@
     "picture"
     "tabs"
     "content";
-    margin-top: 116px;
+    padding-top: 135px;
 
     .subTitle {
       position: relative;

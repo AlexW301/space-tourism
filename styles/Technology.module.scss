@@ -9,7 +9,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   display: grid;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 
   @media screen and (max-width: 1233px) {
@@ -38,7 +38,7 @@
   margin: 0 auto;
   display: grid;
   row-gap: 40px;
-  margin-top: 236px;
+  padding-top: 220px;
   margin-left: 2rem;
   column-gap: 100px;
   position: relative;
@@ -115,7 +115,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 236px;
+    padding-top: 175px;
     margin-left: 0;
     position: relative;
 
@@ -154,6 +154,7 @@
   }
 
   @media screen and (max-width: 655px) {
+    padding-top: 135px;
     .tabs {
       li button {
         height: 40px;

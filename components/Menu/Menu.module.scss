@@ -103,6 +103,13 @@
 .menuText {
   letter-spacing: 2px;
   text-transform: uppercase;
+  background: transparent;
+  color: #ffffff;
+  border: none;
+  padding: 0;
+  font-size: 16px;
+  font-family: "Barlow Condensed";
+  cursor: pointer;
 
   span {
     font-weight: 600;

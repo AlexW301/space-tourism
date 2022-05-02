@@ -9,7 +9,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   display: grid;
-  align-items: center;
+  align-items: flex-start;
 
   @media screen and (max-width: 1233px) {
     background: url(/assets/destination/background-destination-tablet.jpg);
@@ -38,7 +38,7 @@
   display: grid;
   row-gap: 70px;
   column-gap: 156px;
-  padding: 170px 2rem 50px;
+  padding: 220px 2rem 50px;
   grid-template-areas:
     "subTitle subTitle"
     "image content";
@@ -49,7 +49,7 @@
       "subTitle"
       "image"
       "content";
-      margin-top: 166px;
+      padding-top: 175px;
     .imageContainer {
       width: 100%;
       display: flex;
@@ -62,7 +62,7 @@
       justify-content: center;
       text-align: center;
       row-gap: 30px;
-      margin-top: 106px;
+      padding-top: 135px;
     .planetImg {
         height: 200px;
         width: 200px;
